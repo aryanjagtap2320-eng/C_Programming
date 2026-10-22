@@ -1,42 +1,38 @@
 ///////////////////////////////////////
-//Function name  : DISPLAY
+//Function name  : Divide
 //Input          : Integer
 //Output         : Integer
-//Description    : Performs printing
-//Date           : 18/10/2026
+//Description    : Performs Division
+//Date           : 22/10/2026
 //Author         : Aryan Pradeep Jagtap
 ////////////////////////////////////////
 
+#include <stdio.h>
 
-#include<stdio.h>
-#include<stdlib.h>
-
-void DISPLAY(int iNO)
+int Divide(int iNo1, int iNo2)
 {
-    int iCnt = 0;
-    
-    if (iNO < 0)
-    {
-        iNO = -iNO;
-    }
-    
-    for ( iCnt = 1; iCnt <= iNO; iCnt++)
-    {
-        printf("*\t");
-    }
-    
+    int iAns = 0;
 
+    if(iNo2 == 0)
+    {
+        return -1;
+    }
+    
+    iAns = iNo1 / iNo2;
+
+    return iAns;
 }
-
 
 int main()
 {
-    int iValue = 0;
+    int iValue1 = 15, iValue2 = 5;
+    int iRet = 0;
 
-    printf("Enter the number :\n");
-    scanf("%d",&iValue);
+    iRet = Divide(iValue1, iValue2);
 
-    DISPLAY(iValue);
+    printf("Division is %d", iRet);
 
-    return EXIT_SUCCESS;
+    return 0;
 }
+
+
