@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+
+bool CheckPrime(int iNO)
+{
+    int iCnt = 0;
+    int iSum = 0;
+    for (int iCnt = 2; iCnt <= iNO/2 ; iCnt++)
+    {
+        if ((iNO % iCnt)==0)
+        {
+            iSum = iSum + iCnt;
+        }
+    }
+    if (iSum == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    
+}
+
+int main()
+{
+    int iValue = 0;
+    bool bRet = false;
+
+    printf("Enter the number : \n");
+    scanf("%d",&iValue);
+
+    bRet = CheckPrime(iValue);
+    
+    if (bRet)
+    {
+        printf("It is a prime number...\n");
+    }
+    else
+    {
+        printf("It is not a prime number...\n");
+    }
+    
+    return EXIT_SUCCESS;
+}
